@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         saveData=findViewById(R.id.saveData);
         getData=findViewById(R.id.getData);
         nxtActivity=findViewById(R.id.nextActivity);
+
         nxtActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                     String st=sharedPreferences.getString(Name,"");
-                    if(st==userName.getText().toString())
+                    if(st.equals(userID.getText().toString()))
                     {
                             startActivity(new Intent(MainActivity.this,TestActivity.class));
                     }
